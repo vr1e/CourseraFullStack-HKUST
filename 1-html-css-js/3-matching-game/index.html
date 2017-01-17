@@ -37,7 +37,7 @@
             var theBody = document.getElementsByTagName("body")[0];
             // create smiley
             var smiley = document.createElement("img");
-            smiley.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+            smiley.src = "smile.png";
             smiley.style.top = imageTopPosition + "px";
             smiley.style.left = imageLeftPosition + "px";
             theLeftSide.appendChild(smiley);
@@ -67,8 +67,14 @@
         //clicking anything except the proper smiley alerts Game Over and ends the game
         theBody.onclick = function gameOver() {
           alert("Game Over!");
-          theBody.onclick = null;
           theLeftSide.lastChild.onclick = null;
+            (function() {
+                if (confirm("Do you want to play again?") == true) {
+                  location.reload();
+            } else {
+              theBody.onclick = null;
+            }
+          })();
         }
     }
 
