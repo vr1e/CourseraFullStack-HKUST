@@ -42,7 +42,12 @@
           theLeftSide.appendChild(smiley);
           n++;
         }
+        var theRightSide = document.getElementById("rightSide");
+        var leftSideImages = theLeftSide.cloneNode(true);
+        leftSideImages.removeChild(leftSideImages.lastChild);
+        theRightSide.appendChild(leftSideImages);
     }
+
   </script>
 </body>
 </html>
