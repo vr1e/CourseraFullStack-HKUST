@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Color Guessing Game</title>
+</head>
+	<body onload="doGame()">
+		<script type="text/javascript">
+			var target;
+			var guess_input;
+			var gameOver = false;
+			var guessNumber = 0;
+			var colors = ["aqua", "black", "blue", "fuchsia", "gray", "grey", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow"];
+
+			function doGame() {
+				// Choose random number between 0 and 17 (standard CSS color names).
+				var target_index = Math.round(Math.random() * 17);
+				target = colors[target_index];
+
+				//Sets the color of the h1 title to help in guessing
+				document.getElementById("boja").style.color = target;
+				alert("The color you need to guess is " + target + ".")
+
+				while (!gameOver) {
+					// Enter guess color and lowercase it.
+					guess_input = prompt("I am thinking of one of these colors:\n\naqua, black, blue, fuchsia, gray, grey, green, lime, maroon, navy, olive, purple, red, silver, teal, white, yellow\n\nWhat color am I thinking of?").toLowerCase();
+					// Add to the numbers of guesses.
+					guessNumber++
+
+					if (guess_input == target) {
+						gameOver = true;
+					}
+				}
+			}
+		</script>
+		<h1 id="boja">JavaScript Color Guessing Game</h1>
+	</body>
+</html>
