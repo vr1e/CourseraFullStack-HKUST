@@ -128,27 +128,6 @@ angular.module('conFusion.controllers', [])
 
 }])
 
-// .controller('FeedbackController', ['$scope', 'feedbackFactory', function($scope,feedbackFactory) {
-//
-//     $scope.sendFeedback = function() {
-//
-//         console.log($scope.feedback);
-//
-//         if ($scope.feedback.agree && ($scope.feedback.mychannel == "")) {
-//             $scope.invalidChannelSelection = true;
-//             console.log('incorrect');
-//         }
-//         else {
-//             $scope.invalidChannelSelection = false;
-//             feedbackFactory.save($scope.feedback);
-//             $scope.feedback = {mychannel:"", firstName:"", lastName:"", agree:false, email:"" };
-//             $scope.feedback.mychannel="";
-//             $scope.feedbackForm.$setPristine();
-//             console.log($scope.feedback);
-//         }
-//     };
-// }])
-
 .controller('DishDetailController', ['$scope', '$stateParams', 'dish', 'menuFactory', 'favoriteFactory', '$ionicPopover', '$ionicModal', 'favoriteFactory', 'baseURL', '$ionicListDelegate', function($scope, $stateParams, dish, menuFactory, favoriteFactory, $ionicPopover, $ionicModal, favoriteFactory, baseURL, $ionicListDelegate) {
 
     $scope.baseURL = baseURL;
@@ -198,18 +177,6 @@ angular.module('conFusion.controllers', [])
 
 }])
 
-/*.controller('DishCommentController', ['$scope', 'menuFactory', function($scope, menuFactory) {
-    $scope.mycomment = {rating:5, comment:"", author:"", date:""};
-    $scope.submitComment = function () {
-        $scope.mycomment.date = new Date().toISOString();
-        console.log($scope.mycomment);
-        $scope.dish.comments.push($scope.mycomment);
-        menuFactory.getDishes().update({id:$scope.dish.id},$scope.dish);
-        $scope.commentForm.$setPristine();
-        $scope.mycomment = {rating:5, comment:"", author:"", date:""};
-    }
-}]) */
-
 .controller('IndexController', ['$scope', 'leader', 'dish', 'promotion', 'menuFactory', 'corporateFactory', 'promotionFactory', 'baseURL', function($scope, leader, dish, promotion, menuFactory, corporateFactory, promotionFactory, baseURL) {
 
     $scope.baseURL = baseURL;
@@ -229,11 +196,12 @@ angular.module('conFusion.controllers', [])
 
 }])
 
-.controller('FavoritesController', ['$scope', 'dishes', 'favorites', 'favoriteFactory', 'baseURL', '$ionicListDelegate', '$ionicPopup', '$ionicLoading', '$timeout', function ($scope, dishes, favorites, favoriteFactory, baseURL, $ionicListDelegate, $ionicPopup, $ionicLoading, $timeout) {
+.controller('FavoritesController', ['$scope', '$localStorage', 'dishes', 'favorites', 'favoriteFactory', 'baseURL', '$ionicListDelegate', '$ionicPopup', '$ionicLoading', '$timeout', function ($scope, $localStorage, dishes, favorites, favoriteFactory, baseURL, $ionicListDelegate, $ionicPopup, $ionicLoading, $timeout) {
 
     $scope.baseURL = baseURL;
     $scope.shouldShowDelete = false;
 
+    // $scope.favorites = $localStorage.getObject('favorites','{}');
     $scope.favorites = favorites;
 
     $scope.dishes = dishes;
