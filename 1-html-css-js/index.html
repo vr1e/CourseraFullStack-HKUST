@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dating Company Website</title>
+    <meta name="author" content="vrle">
+</head>
+<body>
+  <h1>Please Enter Your Details For Our Dating Website!</h1>
+  <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="get" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Your Face</legend>
+        <label for="avatar">Your Image:</label>
+          <input type="file" id="avatar" name="avatar" required><br>
+        <label for="preview">Image Preview:</label>
+        <img id="preview">
+    </fieldset>
+    <fieldset>
+      <legend>Your General Details</legend>
+        <label for="name">Name:</label>
+          <input type="text" name="name" placeholder="Your Full name" required><br>
+        <label for="gender">Gender:</label>
+          <input type="radio" name="gender" value="male" required>Male
+          <input type="radio" name="gender" value="female">Female<br>
+        <label for="age">Age:</label>
+          <input type="number" name="age" min="1" max="99" step="1" value="18" required><br>
+        <label for="birth">Date of birth:</label>
+          <input type="date" name="birth"><br>
+        <label for="color">Favorite color:</label>
+          <input type="color" name="color"><br>
+        <label for="country">Which country:</label>
+          <select name="country">
+            <option value="no-selection"></option>
+            <option value="china">China</option>
+            <option value="india">India</option>
+            <option value="us">United States</option>
+            <option value="brazil">Brazil</option>
+            <option value="japan">Japan</option>
+          </select>
+    </fieldset>
+    <fieldset>
+      <legend>Your indicators</legend>
+        <label for="height">Height:</label>
+          Short
+            <input type="range" name="height" min="0" max="250" step="5" value="125">
+          Tall<br>
+          </label>
+        <label for="salary">Salary:</label>
+          Poor
+            <input type="range" name="salary" min="0" max="3000" step="100" value="1500">
+          Rich
+    </fieldset>
+    <fieldset>
+      <legend>Your Contact Information</legend>
+        <label for="email">Email:</label>
+          <input type="email" name="email" required><br>
+        <label for="mobile">Mobile:</label>
+          <input type="tel" name="mobile"><br>
+        <label for="address">Address:</label>
+          <textarea rows="3" cols="60" name="address"></textarea><br>
+        <label for="contact">Method to contact you:</label>
+          <input type="checkbox" name="contact" value="con-email">Email
+          <input type="checkbox" name="contact" value="con-whatsapp">Whatsapp
+          <input type="checkbox" name="contact" value="con-chat">In-app chat
+    </fieldset>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html>
