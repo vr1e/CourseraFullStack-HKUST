@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'conFusion.services'])
 
-  .run(function($ionicPlatform, $rootScope, $ionicLoading) {
+  .run(function($ionicPlatform, $rootScope, $ionicLoading, $cordovaSplashscreen, $timeout) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -19,6 +19,9 @@ angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'con
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+        $timeout(function() {
+            $cordovaSplashscreen.hide();
+        }, 2000);
     });
 
     $rootScope.$on('loading:show', function () {
