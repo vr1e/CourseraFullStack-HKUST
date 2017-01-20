@@ -169,6 +169,12 @@
           "comment": "dasdasd",
           "author": "dsadas",
           "date": "2017-01-17T10:11:24.261Z"
+        },
+        {
+          "rating": "2",
+          "comment": "123sdfsc",
+          "author": "test",
+          "date": "2017-01-20T16:50:13.374Z"
         }
       ]
     },
@@ -258,6 +264,12 @@
           "comment": "dasdwea",
           "author": "fdfsdfvcvxc",
           "date": "2017-01-16T11:18:47.607Z"
+        },
+        {
+          "rating": "3",
+          "comment": "tresetdfg",
+          "author": "",
+          "date": "2017-01-20T16:33:43.849Z"
         }
       ]
     },

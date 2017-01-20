@@ -10,6 +10,7 @@ angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'con
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
+
       if (window.cordova && window.cordova.plugins.Keyboard) {
         cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         cordova.plugins.Keyboard.disableScroll(true);
@@ -19,9 +20,9 @@ angular.module('conFusion', ['ionic', 'ngCordova', 'conFusion.controllers', 'con
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
-        $timeout(function() {
-            $cordovaSplashscreen.hide();
-        }, 2000);
+      $timeout(function() {
+          $cordovaSplashscreen.hide();
+      }, 2000);
     });
 
     $rootScope.$on('loading:show', function () {
