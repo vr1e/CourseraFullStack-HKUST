@@ -120,25 +120,25 @@ angular.module('conFusion.controllers', [])
       };
 
 
-    $scope.getGalleryPicture = function() {
-  var options = {
-   maximumImagesCount: 1,
-   width: 100,
-   height: 100,
-   quality: 50
- };
+      $scope.getGalleryPicture = function() {
+        var options = {
+          maximumImagesCount: 1,
+          width: 100,
+          height: 100,
+          quality: 50
+        };
 
-  $cordovaImagePicker.getPictures(options)
-  .then(function (results) {
-    for (var i = 0; i < results.length; i++) {
-      console.log('Image URI: ' + results[i]);
-      $scope.registration.imgSrc = results[i];
-    }
-  }, function(error) {
-// error getting photos
-});
+        $cordovaImagePicker.getPictures(options)
+          .then(function(results) {
+            for (var i = 0; i < results.length; i++) {
+              console.log('Image URI: ' + results[i]);
+              $scope.registration.imgSrc = results[i];
+            }
+          }, function(error) {
+            // error getting photos
+          });
 
-};
+      };
 
     });
 
